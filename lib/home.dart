@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'edit_name.dart';
+import 'editname.dart';
 
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 const Color white = Color.fromARGB(255, 255, 255, 255);
@@ -154,6 +154,7 @@ class NameButton extends StatelessWidget {
                       child: TextButton(
                           onPressed: () {
                             Navigator.push(context,
+                                MaterialPageRoute(builder: (_) => const EditName()));
                           },
                           child: const Padding(
                               padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
