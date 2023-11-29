@@ -17,7 +17,6 @@ class EditName extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text(''),
           backgroundColor: white,
           foregroundColor: white,
           leading: IconButton(
@@ -26,13 +25,76 @@ class EditName extends StatelessWidget {
           ),
         ),
         body: const Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: EdgeInsets.fromLTRB(50.0, 16.0, 50.0, 16.0),
             child: Column(
               children: [
-                SizedBox(height: 50),
+                EditNameTextHeader(),
+                SizedBox(height: 10),
+                NameTextFields(),
+                SizedBox(height: 10),
+                UpdateButton()
               ],
             )),
       ),
     );
+  }
+}
+
+class EditNameTextHeader extends StatelessWidget {
+  const EditNameTextHeader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text(
+      'What\'s your name?',
+      textAlign: TextAlign.left,
+      overflow: TextOverflow.ellipsis,
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+        color: black,
+        fontSize: 24,
+      ),
+    );
+  }
+}
+
+class NameTextFields extends StatelessWidget {
+  const NameTextFields({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Row(
+      children: [
+        Flexible(
+            child: Padding(
+                padding: EdgeInsets.all(20.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'First Name',
+                  ),
+                ))),
+        Flexible(
+            child: Padding(
+                padding: EdgeInsets.all(20.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Last Name',
+                  ),
+                ))),
+      ],
+    );
+  }
+}
+
+class UpdateButton extends StatelessWidget {
+  const UpdateButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+        onPressed: () => Navigator.of(context).pop(),
+        child: const Text('Update'));
   }
 }

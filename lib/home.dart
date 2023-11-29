@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
               children: [
                 IconRow(),
                 SizedBox(height: 50),
-                EditProfile(),
+                EditProfileText(),
                 SizedBox(height: 20),
                 ProfileCircle(),
                 SizedBox(height: 20),
@@ -38,8 +38,8 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class EditProfile extends StatelessWidget {
-  const EditProfile({super.key});
+class EditProfileText extends StatelessWidget {
+  const EditProfileText({super.key});
 
   @override
   Widget build(BuildContext context) {
