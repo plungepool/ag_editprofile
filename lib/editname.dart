@@ -15,8 +15,17 @@ class EditName extends StatelessWidget {
         scaffoldBackgroundColor: white,
       ),
       debugShowCheckedModeBanner: false,
-      home: const Scaffold(
-          body: Padding(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text(''),
+          backgroundColor: white,
+          foregroundColor: white,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back, color: black),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
+        ),
+        body: const Padding(
             padding: EdgeInsets.all(16.0),
             child: Column(
               children: [
