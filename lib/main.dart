@@ -28,7 +28,12 @@ class MyApp extends StatelessWidget {
                 const SizedBox(height: 50),
                 EditProfile(),
                 const SizedBox(height: 20),
-                ProfileCircle()
+                ProfileCircle(),
+                const SizedBox(height: 20),
+                NameButton(),
+                PhoneButton(),
+                EmailButton(),
+                AboutButton()
               ],
             )),
       )),
@@ -110,5 +115,229 @@ class ProfileCircle extends StatelessWidget {
         ),
       ],
     );
+  }
+}
+
+class NameButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+        padding: const EdgeInsets.only(bottom: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Name',
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+                color: Colors.grey,
+              ),
+            ),
+            const SizedBox(height: 1),
+            Container(
+                width: 400,
+                height: 50,
+                decoration: const BoxDecoration(
+                    border: Border(
+                        bottom: BorderSide(
+                  color: Colors.grey,
+                  width: 1,
+                ))),
+                child: Row(children: [
+                  Expanded(
+                      child: TextButton(
+                          onPressed: () {
+                            // navigateSecondPage(EditDescriptionFormPage());
+                          },
+                          child: const Padding(
+                              padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
+                              child: Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Text(
+                                    'Rob Duffy',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      height: 1.4,
+                                      color: black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ))))),
+                  const Icon(
+                    Icons.keyboard_arrow_right,
+                    color: Colors.grey,
+                    size: 40.0,
+                  )
+                ]))
+          ],
+        ));
+  }
+}
+
+class PhoneButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+        padding: const EdgeInsets.only(bottom: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Phone',
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+                color: Colors.grey,
+              ),
+            ),
+            const SizedBox(height: 1),
+            Container(
+                width: 400,
+                height: 50,
+                decoration: const BoxDecoration(
+                    border: Border(
+                        bottom: BorderSide(
+                  color: Colors.grey,
+                  width: 1,
+                ))),
+                child: Row(children: [
+                  Expanded(
+                      child: TextButton(
+                          onPressed: () {
+                            // navigateSecondPage(EditDescriptionFormPage());
+                          },
+                          child: const Padding(
+                              padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
+                              child: Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Text(
+                                    '(555) 555 - 5555',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      height: 1.4,
+                                      color: black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ))))),
+                  const Icon(
+                    Icons.keyboard_arrow_right,
+                    color: Colors.grey,
+                    size: 40.0,
+                  )
+                ]))
+          ],
+        ));
+  }
+}
+
+class EmailButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+        padding: const EdgeInsets.only(bottom: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Email',
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+                color: Colors.grey,
+              ),
+            ),
+            const SizedBox(height: 1),
+            Container(
+                width: 400,
+                height: 50,
+                decoration: const BoxDecoration(
+                    border: Border(
+                        bottom: BorderSide(
+                  color: Colors.grey,
+                  width: 1,
+                ))),
+                child: Row(children: [
+                  Expanded(
+                      child: TextButton(
+                          onPressed: () {
+                            // navigateSecondPage(EditDescriptionFormPage());
+                          },
+                          child: const Padding(
+                              padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
+                              child: Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Text(
+                                    'rob@plungepool.dev',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      height: 1.4,
+                                      color: black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ))))),
+                  const Icon(
+                    Icons.keyboard_arrow_right,
+                    color: Colors.grey,
+                    size: 40.0,
+                  )
+                ]))
+          ],
+        ));
+  }
+}
+
+class AboutButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+        padding: const EdgeInsets.only(bottom: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Tell us about yourself',
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+                color: Colors.grey,
+              ),
+            ),
+            const SizedBox(height: 1),
+            Container(
+                width: 400,
+                height: 100,
+                decoration: const BoxDecoration(
+                    border: Border(
+                        bottom: BorderSide(
+                  color: Colors.grey,
+                  width: 1,
+                ))),
+                child: Row(children: [
+                  Expanded(
+                      child: TextButton(
+                          onPressed: () {
+                            // navigateSecondPage(EditDescriptionFormPage());
+                          },
+                          child: const Padding(
+                              padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
+                              child: Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Text(
+                                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor fermentum orci, ut tristique nisi dictum ac. Sed nisl leo, rutrum sit amet velit id, interdum rutrum arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam nibh sapien, commodo at condimentum quis, mattis nec nibh. Sed condimentum sed justo et elementum. Fusce quis sem pretium, suscipit neque eget, ornare massa.',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      height: 1.4,
+                                      color: black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ))))),
+                  const Icon(
+                    Icons.keyboard_arrow_right,
+                    color: Colors.grey,
+                    size: 40.0,
+                  )
+                ]))
+          ],
+        ));
   }
 }
