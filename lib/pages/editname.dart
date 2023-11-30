@@ -1,13 +1,10 @@
-import 'package:ag_editprofile/home.dart';
+import 'package:ag_editprofile/pages/home.dart';
 import 'package:flutter/material.dart';
 
-const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
-const Color white = Color.fromARGB(255, 255, 255, 255);
-const Color blue = Color.fromARGB(255, 64, 105, 224);
-const Color black = Color.fromARGB(255, 0, 0, 0);
-
-TextEditingController firstNameController = TextEditingController(text: HomePage.user.nameFirst);
-TextEditingController lastNameController = TextEditingController(text: HomePage.user.nameLast);
+TextEditingController firstNameController =
+    TextEditingController(text: HomePage.user.nameFirst);
+TextEditingController lastNameController =
+    TextEditingController(text: HomePage.user.nameLast);
 
 class EditName extends StatelessWidget {
   const EditName({super.key});

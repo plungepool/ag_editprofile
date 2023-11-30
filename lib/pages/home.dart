@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:ag_editprofile/user_data.dart';
+import 'package:ag_editprofile/model/user_data.dart';
 import 'editname.dart';
 
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
