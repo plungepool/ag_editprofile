@@ -1,6 +1,7 @@
 class User {
   String photo;
-  String name;
+  String nameFirst;
+  String nameLast;
   String phone;
   String email;
   String aboutme;
@@ -8,7 +9,8 @@ class User {
   // Constructor
   User({
     required this.photo,
-    required this.name,
+    required this.nameFirst,
+    required this.nameLast,
     required this.phone,
     required this.email,
     required this.aboutme,
@@ -16,14 +18,16 @@ class User {
 
   User copy({
     String? photoPath,
-    String? name,
+    String? nameFirst,
+    String? nameLast,
     String? phone,
     String? email,
     String? about,
   }) =>
       User(
         photo: photoPath ?? this.photo,
-        name: name ?? this.name,
+        nameFirst: nameFirst ?? this.nameFirst,
+        nameLast: nameLast ?? this.nameLast,
         email: email ?? this.email,
         phone: phone ?? this.phone,
         aboutme: about ?? this.aboutme,

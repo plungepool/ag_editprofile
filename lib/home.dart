@@ -32,7 +32,8 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 20),
                 const ProfileCircle(),
                 const SizedBox(height: 20),
-                buildNameButton(context, HomePage.user.name),
+                buildNameButton(
+                    context, HomePage.user.nameFirst, HomePage.user.nameLast),
                 const PhoneButton(),
                 const EmailButton(),
                 const AboutButton()
@@ -42,56 +43,59 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget buildNameButton(BuildContext context, String name) => Padding(
-      padding: const EdgeInsets.only(bottom: 10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'Name',
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey,
-            ),
-          ),
-          const SizedBox(height: 1),
-          Container(
-              width: 400,
-              height: 50,
-              decoration: const BoxDecoration(
-                  border: Border(
-                      bottom: BorderSide(
-                color: Colors.grey,
-                width: 1,
-              ))),
-              child: Row(children: [
-                Expanded(
-                    child: TextButton(
-                        onPressed: () {
-                          navigateSecondPage(EditName());
-                        },
-                        child: Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
-                            child: Align(
-                                alignment: Alignment.topLeft,
-                                child: Text(
-                                  name,
-                                  style: const TextStyle(
-                                    fontSize: 16,
-                                    height: 1.4,
-                                    color: black,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ))))),
-                const Icon(
-                  Icons.keyboard_arrow_right,
+  Widget buildNameButton(
+          BuildContext context, String nameFirst, String nameLast) =>
+      Padding(
+          padding: const EdgeInsets.only(bottom: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Name',
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500,
                   color: Colors.grey,
-                  size: 40.0,
-                )
-              ]))
-        ],
-      ));
+                ),
+              ),
+              const SizedBox(height: 1),
+              Container(
+                  width: 400,
+                  height: 50,
+                  decoration: const BoxDecoration(
+                      border: Border(
+                          bottom: BorderSide(
+                    color: Colors.grey,
+                    width: 1,
+                  ))),
+                  child: Row(children: [
+                    Expanded(
+                        child: TextButton(
+                            onPressed: () {
+                              navigateSecondPage(EditName());
+                            },
+                            child: Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(0, 10, 10, 10),
+                                child: Align(
+                                    alignment: Alignment.topLeft,
+                                    child: Text(
+                                      '$nameFirst $nameLast',
+                                      style: const TextStyle(
+                                        fontSize: 16,
+                                        height: 1.4,
+                                        color: black,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ))))),
+                    const Icon(
+                      Icons.keyboard_arrow_right,
+                      color: Colors.grey,
+                      size: 40.0,
+                    )
+                  ]))
+            ],
+          ));
 
   FutureOr onGoBack(dynamic value) {
     setState(() {});

@@ -6,6 +6,9 @@ const Color white = Color.fromARGB(255, 255, 255, 255);
 const Color blue = Color.fromARGB(255, 64, 105, 224);
 const Color black = Color.fromARGB(255, 0, 0, 0);
 
+TextEditingController firstNameController = TextEditingController(text: HomePage.user.nameFirst);
+TextEditingController lastNameController = TextEditingController(text: HomePage.user.nameLast);
+
 class EditName extends StatelessWidget {
   const EditName({super.key});
 
@@ -58,22 +61,24 @@ class NameTextFields extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
         Flexible(
             child: Padding(
-                padding: EdgeInsets.all(20.0),
-                child: TextField(
-                  decoration: InputDecoration(
+                padding: const EdgeInsets.all(20.0),
+                child: TextFormField(
+                  controller: firstNameController,
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'First Name',
                   ),
                 ))),
         Flexible(
             child: Padding(
-                padding: EdgeInsets.all(20.0),
-                child: TextField(
-                  decoration: InputDecoration(
+                padding: const EdgeInsets.all(20.0),
+                child: TextFormField(
+                  controller: lastNameController,
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Last Name',
                   ),
@@ -96,7 +101,8 @@ class _UpdateButtonState extends State<UpdateButton> {
     return TextButton(
         onPressed: () {
           setState(() {
-            HomePage.user.name = 'test';
+            HomePage.user.nameFirst = firstNameController.text;
+            HomePage.user.nameLast = lastNameController.text;
           });
           Navigator.pop(context);
         },

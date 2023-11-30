@@ -3,7 +3,8 @@ import 'user.dart';
 class UserData {
   static User myUser = User(
     photo: 'default_photo.jpg',
-    name: 'Rob Duffy',
+    nameFirst: 'Rob',
+    nameLast: 'Duffy',
     phone: '(555) 555 - 5555',
     email: 'rob@plungepool.dev',
     aboutme:
