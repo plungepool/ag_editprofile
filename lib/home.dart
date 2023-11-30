@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Builder(builder: (context) {
         return Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
                 const IconRow(),
@@ -34,9 +34,9 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 20),
                 buildNameButton(
                     context, HomePage.user.nameFirst, HomePage.user.nameLast),
-                const PhoneButton(),
-                const EmailButton(),
-                const AboutButton()
+                buildPhoneButton(),
+                buildEmailButton(),
+                buildAboutButton()
               ],
             ));
       }),
@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage> {
                     Expanded(
                         child: TextButton(
                             onPressed: () {
-                              navigateSecondPage(EditName());
+                              navigateSecondPage(const EditName());
                             },
                             child: Padding(
                                 padding:
@@ -96,6 +96,159 @@ class _HomePageState extends State<HomePage> {
                   ]))
             ],
           ));
+
+  Widget buildPhoneButton() => Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Phone',
+            style: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w500,
+              color: Colors.grey,
+            ),
+          ),
+          const SizedBox(height: 1),
+          Container(
+              width: 400,
+              height: 50,
+              decoration: const BoxDecoration(
+                  border: Border(
+                      bottom: BorderSide(
+                color: Colors.grey,
+                width: 1,
+              ))),
+              child: Row(children: [
+                Expanded(
+                    child: TextButton(
+                        onPressed: () {
+                          // navigateSecondPage(EditDescriptionFormPage());
+                        },
+                        child: const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
+                            child: Align(
+                                alignment: Alignment.topLeft,
+                                child: Text(
+                                  '(555) 555 - 5555',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    height: 1.4,
+                                    color: black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ))))),
+                const Icon(
+                  Icons.keyboard_arrow_right,
+                  color: Colors.grey,
+                  size: 40.0,
+                )
+              ]))
+        ],
+      ));
+
+  Widget buildEmailButton() => Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Email',
+            style: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w500,
+              color: Colors.grey,
+            ),
+          ),
+          const SizedBox(height: 1),
+          Container(
+              width: 400,
+              height: 50,
+              decoration: const BoxDecoration(
+                  border: Border(
+                      bottom: BorderSide(
+                color: Colors.grey,
+                width: 1,
+              ))),
+              child: Row(children: [
+                Expanded(
+                    child: TextButton(
+                        onPressed: () {
+                          // navigateSecondPage(EditDescriptionFormPage());
+                        },
+                        child: const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
+                            child: Align(
+                                alignment: Alignment.topLeft,
+                                child: Text(
+                                  'rob@plungepool.dev',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    height: 1.4,
+                                    color: black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ))))),
+                const Icon(
+                  Icons.keyboard_arrow_right,
+                  color: Colors.grey,
+                  size: 40.0,
+                )
+              ]))
+        ],
+      ));
+
+  Widget buildAboutButton() => Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Tell us about yourself',
+            style: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w500,
+              color: Colors.grey,
+            ),
+          ),
+          const SizedBox(height: 1),
+          Container(
+              width: 400,
+              height: 100,
+              decoration: const BoxDecoration(
+                  border: Border(
+                      bottom: BorderSide(
+                color: Colors.grey,
+                width: 1,
+              ))),
+              child: Row(children: [
+                Expanded(
+                    child: TextButton(
+                        onPressed: () {
+                          // navigateSecondPage(EditDescriptionFormPage());
+                        },
+                        child: const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
+                            child: Align(
+                                alignment: Alignment.topLeft,
+                                child: Text(
+                                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor fermentum orci, ut tristique nisi dictum ac. Sed nisl leo, rutrum sit amet velit id, interdum rutrum arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam nibh sapien, commodo at condimentum quis, mattis nec nibh. Sed condimentum sed justo et elementum. Fusce quis sem pretium, suscipit neque eget, ornare massa.',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    height: 1.4,
+                                    color: black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ))))),
+                const Icon(
+                  Icons.keyboard_arrow_right,
+                  color: Colors.grey,
+                  size: 40.0,
+                )
+              ]))
+        ],
+      ));
 
   FutureOr onGoBack(dynamic value) {
     setState(() {});
@@ -187,179 +340,5 @@ class ProfileCircle extends StatelessWidget {
         ),
       ],
     );
-  }
-}
-
-class PhoneButton extends StatelessWidget {
-  const PhoneButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.only(bottom: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Phone',
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w500,
-                color: Colors.grey,
-              ),
-            ),
-            const SizedBox(height: 1),
-            Container(
-                width: 400,
-                height: 50,
-                decoration: const BoxDecoration(
-                    border: Border(
-                        bottom: BorderSide(
-                  color: Colors.grey,
-                  width: 1,
-                ))),
-                child: Row(children: [
-                  Expanded(
-                      child: TextButton(
-                          onPressed: () {
-                            // navigateSecondPage(EditDescriptionFormPage());
-                          },
-                          child: const Padding(
-                              padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
-                              child: Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Text(
-                                    '(555) 555 - 5555',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      height: 1.4,
-                                      color: black,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ))))),
-                  const Icon(
-                    Icons.keyboard_arrow_right,
-                    color: Colors.grey,
-                    size: 40.0,
-                  )
-                ]))
-          ],
-        ));
-  }
-}
-
-class EmailButton extends StatelessWidget {
-  const EmailButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.only(bottom: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Email',
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w500,
-                color: Colors.grey,
-              ),
-            ),
-            const SizedBox(height: 1),
-            Container(
-                width: 400,
-                height: 50,
-                decoration: const BoxDecoration(
-                    border: Border(
-                        bottom: BorderSide(
-                  color: Colors.grey,
-                  width: 1,
-                ))),
-                child: Row(children: [
-                  Expanded(
-                      child: TextButton(
-                          onPressed: () {
-                            // navigateSecondPage(EditDescriptionFormPage());
-                          },
-                          child: const Padding(
-                              padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
-                              child: Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Text(
-                                    'rob@plungepool.dev',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      height: 1.4,
-                                      color: black,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ))))),
-                  const Icon(
-                    Icons.keyboard_arrow_right,
-                    color: Colors.grey,
-                    size: 40.0,
-                  )
-                ]))
-          ],
-        ));
-  }
-}
-
-class AboutButton extends StatelessWidget {
-  const AboutButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.only(bottom: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Tell us about yourself',
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w500,
-                color: Colors.grey,
-              ),
-            ),
-            const SizedBox(height: 1),
-            Container(
-                width: 400,
-                height: 100,
-                decoration: const BoxDecoration(
-                    border: Border(
-                        bottom: BorderSide(
-                  color: Colors.grey,
-                  width: 1,
-                ))),
-                child: Row(children: [
-                  Expanded(
-                      child: TextButton(
-                          onPressed: () {
-                            // navigateSecondPage(EditDescriptionFormPage());
-                          },
-                          child: const Padding(
-                              padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
-                              child: Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Text(
-                                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor fermentum orci, ut tristique nisi dictum ac. Sed nisl leo, rutrum sit amet velit id, interdum rutrum arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam nibh sapien, commodo at condimentum quis, mattis nec nibh. Sed condimentum sed justo et elementum. Fusce quis sem pretium, suscipit neque eget, ornare massa.',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      height: 1.4,
-                                      color: black,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ))))),
-                  const Icon(
-                    Icons.keyboard_arrow_right,
-                    color: Colors.grey,
-                    size: 40.0,
-                  )
-                ]))
-          ],
-        ));
   }
 }
