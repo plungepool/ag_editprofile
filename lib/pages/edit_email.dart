@@ -1,11 +1,11 @@
 import 'package:ag_editprofile/pages/home.dart';
 import 'package:flutter/material.dart';
 
-TextEditingController phoneController =
-    TextEditingController(text: HomePage.user.phone);
+TextEditingController emailController =
+    TextEditingController(text: HomePage.user.email);
 
-class EditPhone extends StatelessWidget {
-  const EditPhone({super.key});
+class EditEmail extends StatelessWidget {
+  const EditEmail({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class EditPhone extends StatelessWidget {
           padding: EdgeInsets.fromLTRB(50.0, 16.0, 50.0, 16.0),
           child: Column(
             children: [
-              EditPhoneTextHeader(),
+              EditEmailTextHeader(),
               SizedBox(height: 10),
               NameTextFields(),
               SizedBox(height: 10),
@@ -33,13 +33,13 @@ class EditPhone extends StatelessWidget {
   }
 }
 
-class EditPhoneTextHeader extends StatelessWidget {
-  const EditPhoneTextHeader({super.key});
+class EditEmailTextHeader extends StatelessWidget {
+  const EditEmailTextHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Text(
-      'What\'s your phone number?',
+      'What\'s your email?',
       textAlign: TextAlign.left,
       overflow: TextOverflow.ellipsis,
       style: TextStyle(
@@ -62,10 +62,10 @@ class NameTextFields extends StatelessWidget {
             child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: TextFormField(
-                  controller: phoneController,
+                  controller: emailController,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Your phone number',
+                    labelText: 'Your email address',
                   ),
                 ))),
       ],
@@ -86,7 +86,7 @@ class _UpdateButtonState extends State<UpdateButton> {
     return TextButton(
         onPressed: () {
           setState(() {
-            HomePage.user.phone = phoneController.text;
+            HomePage.user.email = emailController.text;
           });
           Navigator.pop(context);
         },

@@ -1,9 +1,11 @@
-import 'package:ag_editprofile/pages/edit_phone.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:ag_editprofile/model/user_data.dart';
 import 'edit_name.dart';
+import 'edit_phone.dart';
+import 'edit_email.dart';
+
+import 'package:ag_editprofile/model/user_data.dart';
 
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 const Color white = Color.fromARGB(255, 255, 255, 255);
@@ -36,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                 buildNameButton(
                     context, HomePage.user.nameFirst, HomePage.user.nameLast),
                 buildPhoneButton(context, HomePage.user.phone),
-                buildEmailButton(),
+                buildEmailButton(context, HomePage.user.email),
                 buildAboutButton()
               ],
             ));
@@ -149,7 +151,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ));
 
-  Widget buildEmailButton() => Padding(
+  Widget buildEmailButton(BuildContext context, String email) => Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -176,15 +178,15 @@ class _HomePageState extends State<HomePage> {
                 Expanded(
                     child: TextButton(
                         onPressed: () {
-                          // navigateSecondPage(EditDescriptionFormPage());
+                          navigateSecondPage(const EditEmail());
                         },
-                        child: const Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
+                        child: Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
                             child: Align(
                                 alignment: Alignment.topLeft,
                                 child: Text(
-                                  'rob@plungepool.dev',
-                                  style: TextStyle(
+                                  email,
+                                  style: const TextStyle(
                                     fontSize: 16,
                                     height: 1.4,
                                     color: black,
