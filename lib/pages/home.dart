@@ -1,3 +1,4 @@
+import 'package:ag_editprofile/pages/editphone.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -34,7 +35,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 20),
                 buildNameButton(
                     context, HomePage.user.nameFirst, HomePage.user.nameLast),
-                buildPhoneButton(),
+                buildPhoneButton(context, HomePage.user.phone),
                 buildEmailButton(),
                 buildAboutButton()
               ],
@@ -97,7 +98,7 @@ class _HomePageState extends State<HomePage> {
             ],
           ));
 
-  Widget buildPhoneButton() => Padding(
+  Widget buildPhoneButton(BuildContext context, String phone) => Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -124,15 +125,15 @@ class _HomePageState extends State<HomePage> {
                 Expanded(
                     child: TextButton(
                         onPressed: () {
-                          // navigateSecondPage(EditDescriptionFormPage());
+                          navigateSecondPage(const EditPhone());
                         },
-                        child: const Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
+                        child: Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
                             child: Align(
                                 alignment: Alignment.topLeft,
                                 child: Text(
-                                  '(555) 555 - 5555',
-                                  style: TextStyle(
+                                  phone,
+                                  style: const TextStyle(
                                     fontSize: 16,
                                     height: 1.4,
                                     color: black,
