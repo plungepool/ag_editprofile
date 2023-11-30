@@ -71,12 +71,6 @@ class _HomePageState extends State<HomePage> {
                         onPressed: () {
                           navigateSecondPage(EditName());
                         },
-                        // {
-                        //   Navigator.push(
-                        //           context,
-                        //           MaterialPageRoute(
-                        //               builder: (_) => const EditName()));
-                        // },
                         child: Padding(
                             padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
                             child: Align(
@@ -191,74 +185,6 @@ class ProfileCircle extends StatelessWidget {
     );
   }
 }
-
-// class NameButton extends StatefulWidget {
-//   const NameButton({super.key});
-
-//   @override
-//   State<NameButton> createState() => _NameButtonState();
-// }
-
-// class _NameButtonState extends State<NameButton> {
-//   String name = HomePage.user.name;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Padding(
-//         padding: const EdgeInsets.only(bottom: 10),
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             const Text(
-//               'Name',
-//               style: TextStyle(
-//                 fontSize: 15,
-//                 fontWeight: FontWeight.w500,
-//                 color: Colors.grey,
-//               ),
-//             ),
-//             const SizedBox(height: 1),
-//             Container(
-//                 width: 400,
-//                 height: 50,
-//                 decoration: const BoxDecoration(
-//                     border: Border(
-//                         bottom: BorderSide(
-//                   color: Colors.grey,
-//                   width: 1,
-//                 ))),
-//                 child: Row(children: [
-//                   Expanded(
-//                       child: TextButton(
-//                           onPressed: () {
-//                             Navigator.push(
-//                                 context,
-//                                 MaterialPageRoute(
-//                                     builder: (_) => const EditName()));
-//                           },
-//                           child: Padding(
-//                               padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
-//                               child: Align(
-//                                   alignment: Alignment.topLeft,
-//                                   child: Text(
-//                                     HomePage.user.name,
-//                                     style: const TextStyle(
-//                                       fontSize: 16,
-//                                       height: 1.4,
-//                                       color: black,
-//                                       fontWeight: FontWeight.bold,
-//                                     ),
-//                                   ))))),
-//                   const Icon(
-//                     Icons.keyboard_arrow_right,
-//                     color: Colors.grey,
-//                     size: 40.0,
-//                   )
-//                 ]))
-//           ],
-//         ));
-//   }
-// }
 
 class PhoneButton extends StatelessWidget {
   const PhoneButton({super.key});

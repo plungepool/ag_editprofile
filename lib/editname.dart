@@ -1,8 +1,6 @@
 import 'package:ag_editprofile/home.dart';
 import 'package:flutter/material.dart';
 
-import 'package:ag_editprofile/user_data.dart';
-
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 const Color white = Color.fromARGB(255, 255, 255, 255);
 const Color blue = Color.fromARGB(255, 64, 105, 224);
