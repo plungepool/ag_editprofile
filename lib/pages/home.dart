@@ -4,6 +4,7 @@ import 'dart:async';
 import 'edit_name.dart';
 import 'edit_phone.dart';
 import 'edit_email.dart';
+import 'edit_about.dart';
 
 import 'package:ag_editprofile/model/user_data.dart';
 
@@ -39,7 +40,7 @@ class _HomePageState extends State<HomePage> {
                     context, HomePage.user.nameFirst, HomePage.user.nameLast),
                 buildPhoneButton(context, HomePage.user.phone),
                 buildEmailButton(context, HomePage.user.email),
-                buildAboutButton()
+                buildAboutButton(context, HomePage.user.about)
               ],
             ));
       }),
@@ -202,7 +203,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ));
 
-  Widget buildAboutButton() => Padding(
+  Widget buildAboutButton(BuildContext context, String about) => Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -229,15 +230,15 @@ class _HomePageState extends State<HomePage> {
                 Expanded(
                     child: TextButton(
                         onPressed: () {
-                          // navigateSecondPage(EditDescriptionFormPage());
+                          navigateSecondPage(const EditAbout());
                         },
-                        child: const Padding(
+                        child: Padding(
                             padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
                             child: Align(
                                 alignment: Alignment.topLeft,
                                 child: Text(
-                                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor fermentum orci, ut tristique nisi dictum ac. Sed nisl leo, rutrum sit amet velit id, interdum rutrum arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam nibh sapien, commodo at condimentum quis, mattis nec nibh. Sed condimentum sed justo et elementum. Fusce quis sem pretium, suscipit neque eget, ornare massa.',
-                                  style: TextStyle(
+                                  about,
+                                  style: const TextStyle(
                                     fontSize: 16,
                                     height: 1.4,
                                     color: black,

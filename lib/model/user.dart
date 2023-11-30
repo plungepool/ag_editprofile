@@ -4,7 +4,7 @@ class User {
   String nameLast;
   String phone;
   String email;
-  String aboutme;
+  String about;
 
   // Constructor
   User({
@@ -13,7 +13,7 @@ class User {
     required this.nameLast,
     required this.phone,
     required this.email,
-    required this.aboutme,
+    required this.about,
   });
 
   User copy({
@@ -30,6 +30,6 @@ class User {
         nameLast: nameLast ?? this.nameLast,
         email: email ?? this.email,
         phone: phone ?? this.phone,
-        aboutme: about ?? this.aboutme,
+        about: about ?? this.about,
       );
 }
