@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
+
+import 'package:ag_editprofile/user_data.dart';
 import 'editname.dart';
 
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
@@ -6,35 +9,103 @@ const Color white = Color.fromARGB(255, 255, 255, 255);
 const Color blue = Color.fromARGB(255, 64, 105, 224);
 const Color black = Color.fromARGB(255, 0, 0, 0);
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+  static var user = UserData.myUser;
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: white,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: const Scaffold(
-        body: Padding(
+    return Scaffold(
+      body: Builder(builder: (context) {
+        return Padding(
             padding: EdgeInsets.all(16.0),
             child: Column(
               children: [
-                IconRow(),
-                SizedBox(height: 50),
-                EditProfileText(),
-                SizedBox(height: 20),
-                ProfileCircle(),
-                SizedBox(height: 20),
-                NameButton(),
-                PhoneButton(),
-                EmailButton(),
-                AboutButton()
+                const IconRow(),
+                const SizedBox(height: 50),
+                const EditProfileText(),
+                const SizedBox(height: 20),
+                const ProfileCircle(),
+                const SizedBox(height: 20),
+                buildNameButton(context, HomePage.user.name),
+                const PhoneButton(),
+                const EmailButton(),
+                const AboutButton()
               ],
-            )),
-      ),
+            ));
+      }),
     );
+  }
+
+  Widget buildNameButton(BuildContext context, String name) => Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Name',
+            style: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w500,
+              color: Colors.grey,
+            ),
+          ),
+          const SizedBox(height: 1),
+          Container(
+              width: 400,
+              height: 50,
+              decoration: const BoxDecoration(
+                  border: Border(
+                      bottom: BorderSide(
+                color: Colors.grey,
+                width: 1,
+              ))),
+              child: Row(children: [
+                Expanded(
+                    child: TextButton(
+                        onPressed: () {
+                          navigateSecondPage(EditName());
+                        },
+                        // {
+                        //   Navigator.push(
+                        //           context,
+                        //           MaterialPageRoute(
+                        //               builder: (_) => const EditName()));
+                        // },
+                        child: Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
+                            child: Align(
+                                alignment: Alignment.topLeft,
+                                child: Text(
+                                  name,
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    height: 1.4,
+                                    color: black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ))))),
+                const Icon(
+                  Icons.keyboard_arrow_right,
+                  color: Colors.grey,
+                  size: 40.0,
+                )
+              ]))
+        ],
+      ));
+
+  FutureOr onGoBack(dynamic value) {
+    setState(() {});
+  }
+
+  void navigateSecondPage(Widget editForm) {
+    Route route = MaterialPageRoute(builder: (context) => editForm);
+    Navigator.push(context, route).then(onGoBack);
   }
 }
 
@@ -78,12 +149,12 @@ class ProfileCircle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        const CircleAvatar(
+        CircleAvatar(
           radius: 65,
           backgroundColor: blue,
           child: CircleAvatar(
             radius: 60,
-            backgroundImage: AssetImage('default_photo.jpg'),
+            backgroundImage: AssetImage(HomePage.user.photo),
           ),
         ),
         Positioned(
@@ -121,64 +192,73 @@ class ProfileCircle extends StatelessWidget {
   }
 }
 
-class NameButton extends StatelessWidget {
-  const NameButton({super.key});
+// class NameButton extends StatefulWidget {
+//   const NameButton({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.only(bottom: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Name',
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w500,
-                color: Colors.grey,
-              ),
-            ),
-            const SizedBox(height: 1),
-            Container(
-                width: 400,
-                height: 50,
-                decoration: const BoxDecoration(
-                    border: Border(
-                        bottom: BorderSide(
-                  color: Colors.grey,
-                  width: 1,
-                ))),
-                child: Row(children: [
-                  Expanded(
-                      child: TextButton(
-                          onPressed: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (_) => const EditName()));
-                          },
-                          child: const Padding(
-                              padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
-                              child: Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Text(
-                                    'Rob Duffy',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      height: 1.4,
-                                      color: black,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ))))),
-                  const Icon(
-                    Icons.keyboard_arrow_right,
-                    color: Colors.grey,
-                    size: 40.0,
-                  )
-                ]))
-          ],
-        ));
-  }
-}
+//   @override
+//   State<NameButton> createState() => _NameButtonState();
+// }
+
+// class _NameButtonState extends State<NameButton> {
+//   String name = HomePage.user.name;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Padding(
+//         padding: const EdgeInsets.only(bottom: 10),
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: [
+//             const Text(
+//               'Name',
+//               style: TextStyle(
+//                 fontSize: 15,
+//                 fontWeight: FontWeight.w500,
+//                 color: Colors.grey,
+//               ),
+//             ),
+//             const SizedBox(height: 1),
+//             Container(
+//                 width: 400,
+//                 height: 50,
+//                 decoration: const BoxDecoration(
+//                     border: Border(
+//                         bottom: BorderSide(
+//                   color: Colors.grey,
+//                   width: 1,
+//                 ))),
+//                 child: Row(children: [
+//                   Expanded(
+//                       child: TextButton(
+//                           onPressed: () {
+//                             Navigator.push(
+//                                 context,
+//                                 MaterialPageRoute(
+//                                     builder: (_) => const EditName()));
+//                           },
+//                           child: Padding(
+//                               padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
+//                               child: Align(
+//                                   alignment: Alignment.topLeft,
+//                                   child: Text(
+//                                     HomePage.user.name,
+//                                     style: const TextStyle(
+//                                       fontSize: 16,
+//                                       height: 1.4,
+//                                       color: black,
+//                                       fontWeight: FontWeight.bold,
+//                                     ),
+//                                   ))))),
+//                   const Icon(
+//                     Icons.keyboard_arrow_right,
+//                     color: Colors.grey,
+//                     size: 40.0,
+//                   )
+//                 ]))
+//           ],
+//         ));
+//   }
+// }
 
 class PhoneButton extends StatelessWidget {
   const PhoneButton({super.key});

@@ -1,4 +1,7 @@
+import 'package:ag_editprofile/home.dart';
 import 'package:flutter/material.dart';
+
+import 'package:ag_editprofile/user_data.dart';
 
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 const Color white = Color.fromARGB(255, 255, 255, 255);
@@ -10,32 +13,26 @@ class EditName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: white,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: white,
-          foregroundColor: white,
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back, color: black),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: white,
+        foregroundColor: white,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: black),
+          onPressed: () => Navigator.of(context).pop(),
         ),
-        body: const Padding(
-            padding: EdgeInsets.fromLTRB(50.0, 16.0, 50.0, 16.0),
-            child: Column(
-              children: [
-                EditNameTextHeader(),
-                SizedBox(height: 10),
-                NameTextFields(),
-                SizedBox(height: 10),
-                UpdateButton()
-              ],
-            )),
       ),
+      body: const Padding(
+          padding: EdgeInsets.fromLTRB(50.0, 16.0, 50.0, 16.0),
+          child: Column(
+            children: [
+              EditNameTextHeader(),
+              SizedBox(height: 10),
+              NameTextFields(),
+              SizedBox(height: 10),
+              UpdateButton()
+            ],
+          )),
     );
   }
 }
@@ -88,13 +85,23 @@ class NameTextFields extends StatelessWidget {
   }
 }
 
-class UpdateButton extends StatelessWidget {
+class UpdateButton extends StatefulWidget {
   const UpdateButton({super.key});
 
   @override
+  State<UpdateButton> createState() => _UpdateButtonState();
+}
+
+class _UpdateButtonState extends State<UpdateButton> {
+  @override
   Widget build(BuildContext context) {
     return TextButton(
-        onPressed: () => Navigator.of(context).pop(),
+        onPressed: () {
+          setState(() {
+            HomePage.user.name = 'test';
+          });
+          Navigator.pop(context);
+        },
         child: const Text('Update'));
   }
 }
