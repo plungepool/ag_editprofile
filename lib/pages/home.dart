@@ -1,9 +1,9 @@
-import 'package:ag_editprofile/pages/editphone.dart';
+import 'package:ag_editprofile/pages/edit_phone.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:ag_editprofile/model/user_data.dart';
-import 'editname.dart';
+import 'edit_name.dart';
 
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 const Color white = Color.fromARGB(255, 255, 255, 255);
