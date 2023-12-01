@@ -1,11 +1,11 @@
 import 'package:ag_editprofile/pages/home.dart';
 import 'package:flutter/material.dart';
 
-TextEditingController phoneController =
-    TextEditingController(text: HomePage.user.phone);
+TextEditingController photoController =
+    TextEditingController(text: HomePage.user.photo);
 
-class EditPhone extends StatelessWidget {
-  const EditPhone({super.key});
+class EditPhoto extends StatelessWidget {
+  const EditPhoto({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class EditPhone extends StatelessWidget {
           padding: EdgeInsets.fromLTRB(50.0, 16.0, 50.0, 16.0),
           child: Column(
             children: [
-              EditPhoneTextHeader(),
+              EditPhotoTextHeader(),
               SizedBox(height: 10),
               NameTextFields(),
               SizedBox(height: 10),
@@ -33,13 +33,13 @@ class EditPhone extends StatelessWidget {
   }
 }
 
-class EditPhoneTextHeader extends StatelessWidget {
-  const EditPhoneTextHeader({super.key});
+class EditPhotoTextHeader extends StatelessWidget {
+  const EditPhotoTextHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Text(
-      'What\'s your phone number?',
+      'What\'s your photo number?',
       textAlign: TextAlign.left,
       overflow: TextOverflow.ellipsis,
       style: TextStyle(
@@ -62,10 +62,10 @@ class NameTextFields extends StatelessWidget {
             child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: TextFormField(
-                  controller: phoneController,
+                  controller: photoController,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Your phone number',
+                    labelText: 'Your photo number',
                   ),
                 ))),
       ],
@@ -86,7 +86,7 @@ class _UpdateButtonState extends State<UpdateButton> {
     return TextButton(
         onPressed: () {
           setState(() {
-            HomePage.user.phone = phoneController.text;
+            HomePage.user.photo = photoController.text;
           });
           Navigator.pop(context);
         },

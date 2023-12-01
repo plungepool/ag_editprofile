@@ -5,13 +5,12 @@ import 'edit_name.dart';
 import 'edit_phone.dart';
 import 'edit_email.dart';
 import 'edit_about.dart';
+import 'edit_photo.dart';
 
 import 'package:ag_editprofile/model/user_data.dart';
 
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
-const Color white = Color.fromARGB(255, 255, 255, 255);
 const Color blue = Color.fromARGB(255, 64, 105, 224);
-const Color black = Color.fromARGB(255, 0, 0, 0);
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -88,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                                       style: const TextStyle(
                                         fontSize: 16,
                                         height: 1.4,
-                                        color: black,
+                                        color: Colors.black,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ))))),
@@ -139,7 +138,7 @@ class _HomePageState extends State<HomePage> {
                                   style: const TextStyle(
                                     fontSize: 16,
                                     height: 1.4,
-                                    color: black,
+                                    color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ))))),
@@ -190,7 +189,7 @@ class _HomePageState extends State<HomePage> {
                                   style: const TextStyle(
                                     fontSize: 16,
                                     height: 1.4,
-                                    color: black,
+                                    color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ))))),
@@ -241,7 +240,7 @@ class _HomePageState extends State<HomePage> {
                                   style: const TextStyle(
                                     fontSize: 16,
                                     height: 1.4,
-                                    color: black,
+                                    color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ))))),

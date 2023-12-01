@@ -13,10 +13,10 @@ class EditName extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: white,
-        foregroundColor: white,
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.white,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: black),
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
@@ -46,7 +46,7 @@ class EditNameTextHeader extends StatelessWidget {
       overflow: TextOverflow.ellipsis,
       style: TextStyle(
         fontWeight: FontWeight.bold,
-        color: black,
+        color: Colors.black,
         fontSize: 24,
       ),
     );
