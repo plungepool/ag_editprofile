@@ -25,23 +25,25 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Builder(builder: (context) {
-        return Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: [
-                const IconRow(),
-                const SizedBox(height: 50),
-                const EditProfileText(),
-                const SizedBox(height: 20),
-                buildProfileCircle(context, HomePage.user.photo),
-                const SizedBox(height: 20),
-                buildNameButton(
-                    context, HomePage.user.nameFirst, HomePage.user.nameLast),
-                buildPhoneButton(context, HomePage.user.phone),
-                buildEmailButton(context, HomePage.user.email),
-                buildAboutButton(context, HomePage.user.about)
-              ],
-            ));
+        return Container(
+          alignment: Alignment.center,
+          child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: [
+                  const SizedBox(height: 50),
+                  const EditProfileText(),
+                  const SizedBox(height: 20),
+                  buildProfileCircle(context, HomePage.user.photo),
+                  const SizedBox(height: 20),
+                  buildNameButton(
+                      context, HomePage.user.nameFirst, HomePage.user.nameLast),
+                  buildPhoneButton(context, HomePage.user.phone),
+                  buildEmailButton(context, HomePage.user.email),
+                  buildAboutButton(context, HomePage.user.about)
+                ],
+              )),
+        );
       }),
     );
   }
@@ -325,20 +327,5 @@ class EditProfileText extends StatelessWidget {
         fontSize: 24,
       ),
     );
-  }
-}
-
-class IconRow extends StatelessWidget {
-  const IconRow({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Row(children: [
-      Text('9:41', style: TextStyle(fontWeight: FontWeight.bold, color: blue)),
-      Spacer(),
-      Icon(Icons.network_cell, color: blue),
-      Icon(Icons.network_wifi, color: blue),
-      Icon(Icons.battery_full, color: blue)
-    ]);
   }
 }
