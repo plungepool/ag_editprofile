@@ -43,7 +43,7 @@ class EditNameTextHeader extends StatelessWidget {
     return const Text(
       'What\'s your name?',
       textAlign: TextAlign.left,
-      overflow: TextOverflow.ellipsis,
+      overflow: TextOverflow.visible,
       style: TextStyle(
         fontWeight: FontWeight.bold,
         color: Colors.black,

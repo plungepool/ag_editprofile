@@ -25,7 +25,7 @@ class User {
     String? about,
   }) =>
       User(
-        photo: photoPath ?? this.photo,
+        photo: photoPath ?? photo,
         nameFirst: nameFirst ?? this.nameFirst,
         nameLast: nameLast ?? this.nameLast,
         email: email ?? this.email,

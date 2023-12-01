@@ -279,7 +279,7 @@ class _HomePageState extends State<HomePage> {
                           navigateSecondPage(const EditAbout());
                         },
                         child: Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
+                            padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
                             child: Align(
                                 alignment: Alignment.topLeft,
                                 child: Text(
@@ -318,7 +318,7 @@ class EditProfileText extends StatelessWidget {
     return const Text(
       'Edit Profile',
       textAlign: TextAlign.center,
-      overflow: TextOverflow.ellipsis,
+      overflow: TextOverflow.visible,
       style: TextStyle(
         fontWeight: FontWeight.bold,
         color: blue,

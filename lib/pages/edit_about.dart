@@ -41,7 +41,7 @@ class EditAboutTextHeader extends StatelessWidget {
     return const Text(
       'What type of passenger are you?',
       textAlign: TextAlign.left,
-      overflow: TextOverflow.ellipsis,
+      overflow: TextOverflow.visible,
       style: TextStyle(
         fontWeight: FontWeight.bold,
         color: Colors.black,
