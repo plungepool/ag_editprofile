@@ -38,15 +38,29 @@ class EditPhotoTextHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      'Upload a photo of yourself:',
-      textAlign: TextAlign.left,
-      overflow: TextOverflow.ellipsis,
-      style: TextStyle(
-        fontWeight: FontWeight.bold,
-        color: Colors.black,
-        fontSize: 24,
-      ),
+    return const Column(
+      children: [
+        Text(
+          'Upload a photo of yourself:',
+          textAlign: TextAlign.left,
+          overflow: TextOverflow.visible,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+            fontSize: 24,
+          ),
+        ),
+        Text(
+          'Tap photo to upload.\n(iOS, Android, or Desktop native only. Not supported on Web app.)',
+          textAlign: TextAlign.center,
+          overflow: TextOverflow.visible,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+            fontSize: 14,
+          ),
+        ),
+      ],
     );
   }
 }
@@ -59,15 +73,21 @@ class NameTextFields extends StatelessWidget {
     return Row(
       children: [
         Flexible(
-            child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: TextFormField(
-                  controller: photoController,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Your photo number',
-                  ),
-                ))),
+          child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: GestureDetector(
+                onTap: () async {
+                  ;
+                },
+                child: Container(
+                  alignment: Alignment.center,
+                  child: SizedBox(
+                      width: 300,
+                      height: 300,
+                      child: Image.asset(HomePage.user.photo)),
+                ),
+              )),
+        )
       ],
     );
   }
