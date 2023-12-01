@@ -24,7 +24,7 @@ class EditAbout extends StatelessWidget {
             children: [
               EditAboutTextHeader(),
               SizedBox(height: 10),
-              NameTextFields(),
+              AboutTextFields(),
               SizedBox(height: 10),
               UpdateButton()
             ],
@@ -51,8 +51,8 @@ class EditAboutTextHeader extends StatelessWidget {
   }
 }
 
-class NameTextFields extends StatelessWidget {
-  const NameTextFields({super.key});
+class AboutTextFields extends StatelessWidget {
+  const AboutTextFields({super.key});
 
   @override
   Widget build(BuildContext context) {

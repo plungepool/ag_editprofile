@@ -24,7 +24,7 @@ class EditEmail extends StatelessWidget {
             children: [
               EditEmailTextHeader(),
               SizedBox(height: 10),
-              NameTextFields(),
+              EmailTextFields(),
               SizedBox(height: 10),
               UpdateButton()
             ],
@@ -51,8 +51,8 @@ class EditEmailTextHeader extends StatelessWidget {
   }
 }
 
-class NameTextFields extends StatelessWidget {
-  const NameTextFields({super.key});
+class EmailTextFields extends StatelessWidget {
+  const EmailTextFields({super.key});
 
   @override
   Widget build(BuildContext context) {

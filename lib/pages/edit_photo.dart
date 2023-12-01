@@ -39,7 +39,7 @@ class EditPhotoTextHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Text(
-      'What\'s your photo number?',
+      'Upload a photo of yourself:',
       textAlign: TextAlign.left,
       overflow: TextOverflow.ellipsis,
       style: TextStyle(

@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 50),
                 const EditProfileText(),
                 const SizedBox(height: 20),
-                const ProfileCircle(),
+                buildProfileCircle(context, HomePage.user.photo),
                 const SizedBox(height: 20),
                 buildNameButton(
                     context, HomePage.user.nameFirst, HomePage.user.nameLast),

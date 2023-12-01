@@ -24,7 +24,7 @@ class EditPhone extends StatelessWidget {
             children: [
               EditPhoneTextHeader(),
               SizedBox(height: 10),
-              NameTextFields(),
+              PhoneTextFields(),
               SizedBox(height: 10),
               UpdateButton()
             ],
@@ -51,8 +51,8 @@ class EditPhoneTextHeader extends StatelessWidget {
   }
 }
 
-class NameTextFields extends StatelessWidget {
-  const NameTextFields({super.key});
+class PhoneTextFields extends StatelessWidget {
+  const PhoneTextFields({super.key});
 
   @override
   Widget build(BuildContext context) {
