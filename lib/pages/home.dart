@@ -46,6 +46,53 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  Widget buildProfileCircle(BuildContext context, photo) => GestureDetector(
+      onTap: () {
+        navigateSecondPage(const EditPhoto());
+      },
+      child: Stack(
+        children: [
+          CircleAvatar(
+            radius: 65,
+            backgroundColor: blue,
+            child: CircleAvatar(
+              radius: 60,
+              backgroundImage: AssetImage(photo),
+            ),
+          ),
+          Positioned(
+            top: 10,
+            right: 1,
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 3,
+                    color: Colors.white,
+                  ),
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(
+                      50,
+                    ),
+                  ),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      offset: const Offset(2, 4),
+                      color: Colors.black.withOpacity(
+                        0.3,
+                      ),
+                      blurRadius: 3,
+                    ),
+                  ]),
+              child: const Padding(
+                padding: EdgeInsets.all(2.0),
+                child: Icon(Icons.edit, color: blue),
+              ),
+            ),
+          ),
+        ],
+      ));
+
   Widget buildNameButton(
           BuildContext context, String nameFirst, String nameLast) =>
       Padding(
@@ -293,55 +340,5 @@ class IconRow extends StatelessWidget {
       Icon(Icons.network_wifi, color: blue),
       Icon(Icons.battery_full, color: blue)
     ]);
-  }
-}
-
-class ProfileCircle extends StatelessWidget {
-  const ProfileCircle({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        CircleAvatar(
-          radius: 65,
-          backgroundColor: blue,
-          child: CircleAvatar(
-            radius: 60,
-            backgroundImage: AssetImage(HomePage.user.photo),
-          ),
-        ),
-        Positioned(
-          top: 10,
-          right: 1,
-          child: Container(
-            decoration: BoxDecoration(
-                border: Border.all(
-                  width: 3,
-                  color: Colors.white,
-                ),
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(
-                    50,
-                  ),
-                ),
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    offset: const Offset(2, 4),
-                    color: Colors.black.withOpacity(
-                      0.3,
-                    ),
-                    blurRadius: 3,
-                  ),
-                ]),
-            child: const Padding(
-              padding: EdgeInsets.all(2.0),
-              child: Icon(Icons.edit, color: blue),
-            ),
-          ),
-        ),
-      ],
-    );
   }
 }
