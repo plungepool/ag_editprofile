@@ -23,12 +23,13 @@ class EditName extends StatelessWidget {
       body: const Padding(
           padding: EdgeInsets.fromLTRB(50.0, 16.0, 50.0, 16.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               EditNameTextHeader(),
               SizedBox(height: 10),
               NameTextFields(),
-              SizedBox(height: 10),
-              UpdateButton()
+              SizedBox(height: 310),
+              Center(child: UpdateButton())
             ],
           )),
     );
@@ -62,7 +63,7 @@ class NameTextFields extends StatelessWidget {
       children: [
         Flexible(
             child: Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: const EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 20.0),
                 child: TextFormField(
                   controller: firstNameController,
                   decoration: const InputDecoration(
@@ -72,7 +73,7 @@ class NameTextFields extends StatelessWidget {
                 ))),
         Flexible(
             child: Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: const EdgeInsets.fromLTRB(20.0, 20.0, 0.0, 20.0),
                 child: TextFormField(
                   controller: lastNameController,
                   decoration: const InputDecoration(
@@ -95,7 +96,13 @@ class UpdateButton extends StatefulWidget {
 class _UpdateButtonState extends State<UpdateButton> {
   @override
   Widget build(BuildContext context) {
-    return TextButton(
+    return ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.black,
+          elevation: 2,
+          shape: const ContinuousRectangleBorder(),
+          fixedSize: const Size(350, 50),
+        ),
         onPressed: () {
           setState(() {
             HomePage.user.nameFirst = firstNameController.text;
@@ -103,6 +110,6 @@ class _UpdateButtonState extends State<UpdateButton> {
           });
           Navigator.pop(context);
         },
-        child: const Text('Update'));
+        child: const Text('Update', style: TextStyle(color: Colors.white)));
   }
 }

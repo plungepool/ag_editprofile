@@ -29,10 +29,10 @@ class _HomePageState extends State<HomePage> {
         return Container(
           alignment: Alignment.center,
           child: Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
               child: Column(
                 children: [
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 40),
                   const EditProfileText(),
                   const SizedBox(height: 20),
                   buildProfileCircle(context, HomePage.user.photo),
@@ -106,18 +106,20 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Name',
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.grey,
+              const Padding(
+                padding: EdgeInsets.fromLTRB(12.0, 0.0, 0.0, 0.0),
+                child: Text(
+                  'Name',
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.grey,
+                  ),
                 ),
               ),
               const SizedBox(height: 1),
               Container(
                   width: 400,
-                  height: 60,
                   decoration: const BoxDecoration(
                       border: Border(
                           bottom: BorderSide(
@@ -130,6 +132,9 @@ class _HomePageState extends State<HomePage> {
                             onPressed: () {
                               navigateSecondPage(const EditName());
                             },
+                            style: ButtonStyle(
+                                overlayColor: MaterialStateProperty.all(
+                                    Colors.transparent)),
                             child: Padding(
                                 padding:
                                     const EdgeInsets.fromLTRB(0, 10, 10, 10),
@@ -158,18 +163,20 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Phone',
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey,
+          const Padding(
+            padding: EdgeInsets.fromLTRB(12.0, 0.0, 0.0, 0.0),
+            child: Text(
+              'Phone',
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+                color: Colors.grey,
+              ),
             ),
           ),
           const SizedBox(height: 1),
           Container(
               width: 400,
-              height: 60,
               decoration: const BoxDecoration(
                   border: Border(
                       bottom: BorderSide(
@@ -182,6 +189,9 @@ class _HomePageState extends State<HomePage> {
                         onPressed: () {
                           navigateSecondPage(const EditPhone());
                         },
+                        style: ButtonStyle(
+                            overlayColor:
+                                MaterialStateProperty.all(Colors.transparent)),
                         child: Padding(
                             padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
                             child: Align(
@@ -209,18 +219,20 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Email',
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey,
+          const Padding(
+            padding: EdgeInsets.fromLTRB(12.0, 0.0, 0.0, 0.0),
+            child: Text(
+              'Email',
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+                color: Colors.grey,
+              ),
             ),
           ),
           const SizedBox(height: 1),
           Container(
               width: 400,
-              height: 60,
               decoration: const BoxDecoration(
                   border: Border(
                       bottom: BorderSide(
@@ -233,6 +245,9 @@ class _HomePageState extends State<HomePage> {
                         onPressed: () {
                           navigateSecondPage(const EditEmail());
                         },
+                        style: ButtonStyle(
+                            overlayColor:
+                                MaterialStateProperty.all(Colors.transparent)),
                         child: Padding(
                             padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
                             child: Align(
@@ -260,18 +275,21 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Tell us about yourself',
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey,
+          const Padding(
+            padding: EdgeInsets.fromLTRB(12.0, 0.0, 0.0, 0.0),
+            child: Text(
+              'Tell us about yourself',
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+                color: Colors.grey,
+              ),
             ),
           ),
           const SizedBox(height: 1),
           Container(
               width: 400,
-              height: 110,
+              height: 75,
               decoration: const BoxDecoration(
                   border: Border(
                       bottom: BorderSide(
@@ -284,6 +302,9 @@ class _HomePageState extends State<HomePage> {
                         onPressed: () {
                           navigateSecondPage(const EditAbout());
                         },
+                        style: ButtonStyle(
+                            overlayColor:
+                                MaterialStateProperty.all(Colors.transparent)),
                         child: Padding(
                             padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
                             child: Align(

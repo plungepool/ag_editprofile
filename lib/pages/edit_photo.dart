@@ -23,12 +23,13 @@ class EditPhoto extends StatelessWidget {
       body: const Padding(
           padding: EdgeInsets.fromLTRB(50.0, 16.0, 50.0, 16.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               EditPhotoTextHeader(),
               SizedBox(height: 10),
               PhotoUploadField(),
               SizedBox(height: 10),
-              UpdateButton()
+              Center(child: UpdateButton())
             ],
           )),
     );
@@ -119,7 +120,12 @@ class UpdateButton extends StatefulWidget {
 class _UpdateButtonState extends State<UpdateButton> {
   @override
   Widget build(BuildContext context) {
-    return TextButton(
+    return ElevatedButton(
+        style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.black,
+            elevation: 2,
+            shape: const ContinuousRectangleBorder(),
+            fixedSize: const Size(350, 50),),
         onPressed: () {
           HomePage.user.newPhotoFlag = true;
           setState(() {
@@ -127,6 +133,6 @@ class _UpdateButtonState extends State<UpdateButton> {
           });
           Navigator.pop(context);
         },
-        child: const Text('Update'));
+        child: const Text('Update', style: TextStyle(color: Colors.white)));
   }
 }

@@ -1,4 +1,3 @@
-import 'dart:io';
 
 class User {
   String photo;
