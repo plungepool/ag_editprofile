@@ -1,5 +1,3 @@
-
-https://github.com/plungepool/ag_editprofile/assets/54759532/fca0d6dd-b118-4d83-97a0-33bce88d6034
 # AG Coding Project
 This was my first time building a mobile application so I chose Flutter as the framework since it is what the team already uses. The project took me about 8 hours not including setup.
 
