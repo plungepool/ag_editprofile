@@ -86,7 +86,7 @@ class _PhotoUploadFieldState extends State<PhotoUploadField> {
                 child: Container(
                   alignment: Alignment.center,
                   child: SizedBox(
-                      width: 300, height: 300, child: Image.file(imageFile)),
+                      width: 300, height: 300, child: Image.asset(HomePage.user.photo)),
                 ),
               )),
         )
