@@ -1,3 +1,5 @@
+import 'dart:io';
+
 class User {
   String photo;
   String nameFirst;
@@ -15,21 +17,4 @@ class User {
     required this.email,
     required this.about,
   });
-
-  User copy({
-    String? photoPath,
-    String? nameFirst,
-    String? nameLast,
-    String? phone,
-    String? email,
-    String? about,
-  }) =>
-      User(
-        photo: photoPath ?? photo,
-        nameFirst: nameFirst ?? this.nameFirst,
-        nameLast: nameLast ?? this.nameLast,
-        email: email ?? this.email,
-        phone: phone ?? this.phone,
-        about: about ?? this.about,
-      );
 }

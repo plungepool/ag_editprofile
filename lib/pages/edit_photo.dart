@@ -1,8 +1,10 @@
 import 'package:ag_editprofile/pages/home.dart';
 import 'package:flutter/material.dart';
 
-TextEditingController photoController =
-    TextEditingController(text: HomePage.user.photo);
+import 'package:image_picker/image_picker.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:path/path.dart' as p;
+import 'dart:io';
 
 class EditPhoto extends StatelessWidget {
   const EditPhoto({super.key});
@@ -24,7 +26,7 @@ class EditPhoto extends StatelessWidget {
             children: [
               EditPhotoTextHeader(),
               SizedBox(height: 10),
-              NameTextFields(),
+              PhotoUploadField(),
               SizedBox(height: 10),
               UpdateButton()
             ],
@@ -65,8 +67,15 @@ class EditPhotoTextHeader extends StatelessWidget {
   }
 }
 
-class NameTextFields extends StatelessWidget {
-  const NameTextFields({super.key});
+class PhotoUploadField extends StatefulWidget {
+  const PhotoUploadField({super.key});
+
+  @override
+  State<PhotoUploadField> createState() => _PhotoUploadFieldState();
+}
+
+class _PhotoUploadFieldState extends State<PhotoUploadField> {
+  File imageFile = File(HomePage.user.photo);
 
   @override
   Widget build(BuildContext context) {
@@ -77,14 +86,23 @@ class NameTextFields extends StatelessWidget {
               padding: const EdgeInsets.all(20.0),
               child: GestureDetector(
                 onTap: () async {
-                  ;
+                  final image = await ImagePicker()
+                      .pickImage(source: ImageSource.gallery);
+
+                  if (image == null) return;
+
+                  final location = await getApplicationDocumentsDirectory();
+                  final name = p.basename(image.path);
+                  setState(() {
+                    imageFile = File('${location.path}\\$name');
+                  });
                 },
                 child: Container(
                   alignment: Alignment.center,
                   child: SizedBox(
                       width: 300,
                       height: 300,
-                      child: Image.asset(HomePage.user.photo)),
+                      child: Image.file(imageFile)),
                 ),
               )),
         )
@@ -106,7 +124,7 @@ class _UpdateButtonState extends State<UpdateButton> {
     return TextButton(
         onPressed: () {
           setState(() {
-            HomePage.user.photo = photoController.text;
+            HomePage.user.photo = _PhotoUploadFieldState().imageFile.path;
           });
           Navigator.pop(context);
         },

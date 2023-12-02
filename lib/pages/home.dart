@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'dart:io';
 
 import 'edit_name.dart';
 import 'edit_phone.dart';
@@ -48,52 +49,54 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget buildProfileCircle(BuildContext context, photo) => GestureDetector(
-      onTap: () {
-        navigateSecondPage(const EditPhoto());
-      },
-      child: Stack(
-        children: [
-          CircleAvatar(
-            radius: 65,
-            backgroundColor: blue,
-            child: CircleAvatar(
-              radius: 60,
-              backgroundImage: AssetImage(photo),
-            ),
-          ),
-          Positioned(
-            top: 10,
-            right: 1,
-            child: Container(
-              decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 3,
-                    color: Colors.white,
-                  ),
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(
-                      50,
-                    ),
-                  ),
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                      offset: const Offset(2, 4),
-                      color: Colors.black.withOpacity(
-                        0.3,
-                      ),
-                      blurRadius: 3,
-                    ),
-                  ]),
-              child: const Padding(
-                padding: EdgeInsets.all(2.0),
-                child: Icon(Icons.edit, color: blue),
+  Widget buildProfileCircle(
+          BuildContext context, String backgroundImage) =>
+      GestureDetector(
+          onTap: () {
+            navigateSecondPage(const EditPhoto());
+          },
+          child: Stack(
+            children: [
+              CircleAvatar(
+                radius: 65,
+                backgroundColor: blue,
+                child: CircleAvatar(
+                  radius: 60,
+                  backgroundImage: Image.file(File(backgroundImage)).image,
+                ),
               ),
-            ),
-          ),
-        ],
-      ));
+              Positioned(
+                top: 10,
+                right: 1,
+                child: Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 3,
+                        color: Colors.white,
+                      ),
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(
+                          50,
+                        ),
+                      ),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          offset: const Offset(2, 4),
+                          color: Colors.black.withOpacity(
+                            0.3,
+                          ),
+                          blurRadius: 3,
+                        ),
+                      ]),
+                  child: const Padding(
+                    padding: EdgeInsets.all(2.0),
+                    child: Icon(Icons.edit, color: blue),
+                  ),
+                ),
+              ),
+            ],
+          ));
 
   Widget buildNameButton(
           BuildContext context, String nameFirst, String nameLast) =>
@@ -113,7 +116,7 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 1),
               Container(
                   width: 400,
-                  height: 50,
+                  height: 60,
                   decoration: const BoxDecoration(
                       border: Border(
                           bottom: BorderSide(
@@ -165,7 +168,7 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(height: 1),
           Container(
               width: 400,
-              height: 50,
+              height: 60,
               decoration: const BoxDecoration(
                   border: Border(
                       bottom: BorderSide(
@@ -216,7 +219,7 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(height: 1),
           Container(
               width: 400,
-              height: 50,
+              height: 60,
               decoration: const BoxDecoration(
                   border: Border(
                       bottom: BorderSide(
@@ -267,7 +270,7 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(height: 1),
           Container(
               width: 400,
-              height: 100,
+              height: 110,
               decoration: const BoxDecoration(
                   border: Border(
                       bottom: BorderSide(
