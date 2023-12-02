@@ -1,5 +1,5 @@
 # AG Coding Project
-This was my first time building a mobile application so I chose Flutter as the framework. The project took me about 8 hours not including setup.
+This was my first time building a mobile application so I chose Flutter as the framework since it is what the team already uses. The project took me about 8 hours not including setup.
 
 ***Note**: I attempted the bonus challenge of allowing users to edit their profile and was partially successful, but was not able to get it to work reliably on all platforms so I moved that work onto its own branch that can be found [here](). Please note uploading new profile photo on this branch is not supported when run as a web app.*
 *I ultimately decided to remove this work from the main branch so that I could present an application that could be more easily run and I could fully vet rather than submit unfinished work.*
