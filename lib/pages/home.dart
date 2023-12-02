@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'dart:io';
 
 import 'edit_name.dart';
 import 'edit_phone.dart';
@@ -61,9 +60,7 @@ class _HomePageState extends State<HomePage> {
                 backgroundColor: blue,
                 child: CircleAvatar(
                   radius: 60,
-                  backgroundImage: HomePage.user.newPhotoFlag
-                      ? Image.file(File(backgroundImage)).image
-                      : AssetImage(backgroundImage),
+                  backgroundImage: AssetImage(backgroundImage),
                 ),
               ),
               Positioned(

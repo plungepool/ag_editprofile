@@ -1,7 +1,6 @@
 
 class User {
   String photo;
-  bool newPhotoFlag = false;
   String nameFirst;
   String nameLast;
   String phone;

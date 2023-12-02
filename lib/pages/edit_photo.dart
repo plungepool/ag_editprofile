@@ -1,9 +1,6 @@
 import 'package:ag_editprofile/pages/home.dart';
 import 'package:flutter/material.dart';
 
-import 'package:image_picker/image_picker.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:path/path.dart' as p;
 import 'dart:io';
 
 class EditPhoto extends StatelessWidget {
@@ -25,7 +22,7 @@ class EditPhoto extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              EditPhotoTextHeader(),
+              Center(child: EditPhotoTextHeader()),
               SizedBox(height: 10),
               PhotoUploadField(),
               SizedBox(height: 10),
@@ -54,7 +51,7 @@ class EditPhotoTextHeader extends StatelessWidget {
           ),
         ),
         Text(
-          'Tap photo to upload.\n(iOS, Android, or Desktop native only. Not supported on Web app.)',
+          '(Photo picker disabled in main branch. See ReadMe for details.)',
           textAlign: TextAlign.center,
           overflow: TextOverflow.visible,
           style: TextStyle(
@@ -86,18 +83,6 @@ class _PhotoUploadFieldState extends State<PhotoUploadField> {
           child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: GestureDetector(
-                onTap: () async {
-                  final image = await ImagePicker()
-                      .pickImage(source: ImageSource.gallery);
-
-                  if (image == null) return;
-
-                  final location = await getApplicationDocumentsDirectory();
-                  final name = p.basename(image.path);
-                  setState(() {
-                    imageFile = File('${location.path}\\$name');
-                  });
-                },
                 child: Container(
                   alignment: Alignment.center,
                   child: SizedBox(
@@ -122,15 +107,12 @@ class _UpdateButtonState extends State<UpdateButton> {
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.black,
-            elevation: 2,
-            shape: const ContinuousRectangleBorder(),
-            fixedSize: const Size(350, 50),),
+          backgroundColor: Colors.black,
+          elevation: 2,
+          shape: const ContinuousRectangleBorder(),
+          fixedSize: const Size(350, 50),
+        ),
         onPressed: () {
-          HomePage.user.newPhotoFlag = true;
-          setState(() {
-            HomePage.user.photo = _PhotoUploadFieldState().imageFile.path;
-          });
           Navigator.pop(context);
         },
         child: const Text('Update', style: TextStyle(color: Colors.white)));
