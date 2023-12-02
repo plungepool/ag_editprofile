@@ -7,6 +7,7 @@ This was my first time building a mobile application so I chose Flutter as the f
 
 ## Tested platforms:
 - Android, Windows, Web
+
 *Was unable to test on MacOS or iOS as my Macbook is too outdated to run the current version of Flutter.*
 
 ## Steps to run:
