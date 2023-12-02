@@ -100,9 +100,7 @@ class _PhotoUploadFieldState extends State<PhotoUploadField> {
                 child: Container(
                   alignment: Alignment.center,
                   child: SizedBox(
-                      width: 300,
-                      height: 300,
-                      child: Image.file(imageFile)),
+                      width: 300, height: 300, child: Image.file(imageFile)),
                 ),
               )),
         )
@@ -123,6 +121,7 @@ class _UpdateButtonState extends State<UpdateButton> {
   Widget build(BuildContext context) {
     return TextButton(
         onPressed: () {
+          HomePage.user.newPhotoFlag = true;
           setState(() {
             HomePage.user.photo = _PhotoUploadFieldState().imageFile.path;
           });

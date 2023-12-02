@@ -49,8 +49,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget buildProfileCircle(
-          BuildContext context, String backgroundImage) =>
+  Widget buildProfileCircle(BuildContext context, String backgroundImage) =>
       GestureDetector(
           onTap: () {
             navigateSecondPage(const EditPhoto());
@@ -62,7 +61,9 @@ class _HomePageState extends State<HomePage> {
                 backgroundColor: blue,
                 child: CircleAvatar(
                   radius: 60,
-                  backgroundImage: Image.file(File(backgroundImage)).image,
+                  backgroundImage: HomePage.user.newPhotoFlag
+                      ? Image.file(File(backgroundImage)).image
+                      : AssetImage(backgroundImage),
                 ),
               ),
               Positioned(
