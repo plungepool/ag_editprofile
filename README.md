@@ -1,3 +1,5 @@
+
+https://github.com/plungepool/ag_editprofile/assets/54759532/fca0d6dd-b118-4d83-97a0-33bce88d6034
 # AG Coding Project
 This was my first time building a mobile application so I chose Flutter as the framework since it is what the team already uses. The project took me about 8 hours not including setup.
 
@@ -16,7 +18,7 @@ This was my first time building a mobile application so I chose Flutter as the f
 4) Choose mobile platform, desktop platform, or web browser.
 
 ## Demo video:
-*TBD*
+https://github.com/plungepool/ag_editprofile/assets/54759532/46ba214c-85e7-41fa-9710-d9cafdbe6440
 
 ## Ways I would improve the project given more time:
 - Input validation and character limits.
