@@ -26,7 +26,7 @@ class EditEmail extends StatelessWidget {
               EditEmailTextHeader(),
               SizedBox(height: 10),
               EmailTextFields(),
-              SizedBox(height: 310),
+              SizedBox(height: 220),
               Center(child: UpdateButton())
             ],
           )),

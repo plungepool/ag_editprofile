@@ -26,7 +26,7 @@ class EditPhone extends StatelessWidget {
               EditPhoneTextHeader(),
               SizedBox(height: 10),
               PhoneTextFields(),
-              SizedBox(height: 310),
+              SizedBox(height: 220),
               Center(child: UpdateButton())
             ],
           )),

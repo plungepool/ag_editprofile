@@ -28,7 +28,7 @@ class EditName extends StatelessWidget {
               EditNameTextHeader(),
               SizedBox(height: 10),
               NameTextFields(),
-              SizedBox(height: 310),
+              SizedBox(height: 220),
               Center(child: UpdateButton())
             ],
           )),

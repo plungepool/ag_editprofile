@@ -26,7 +26,7 @@ class EditAbout extends StatelessWidget {
               EditAboutTextHeader(),
               SizedBox(height: 10),
               AboutTextFields(),
-              SizedBox(height: 180),
+              SizedBox(height: 120),
               Center(child: UpdateButton())
             ],
           )),
