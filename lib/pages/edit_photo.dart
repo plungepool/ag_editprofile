@@ -10,25 +10,26 @@ class EditPhoto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.white,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.of(context).pop(),
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.white,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back, color: Colors.black),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
         ),
-      ),
-      body: const Padding(
-          padding: EdgeInsets.fromLTRB(50.0, 16.0, 50.0, 16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(child: EditPhotoTextHeader()),
-              SizedBox(height: 10),
-              PhotoUploadField(),
-            ],
-          )),
-    );
+        body: const SingleChildScrollView(
+          child: Padding(
+              padding: EdgeInsets.fromLTRB(50.0, 16.0, 50.0, 16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Center(child: EditPhotoTextHeader()),
+                  SizedBox(height: 10),
+                  PhotoUploadField(),
+                ],
+              )),
+        ));
   }
 }
 

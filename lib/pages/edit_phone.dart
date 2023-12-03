@@ -18,18 +18,19 @@ class EditPhone extends StatelessWidget {
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
-      body: const Padding(
-          padding: EdgeInsets.fromLTRB(50.0, 16.0, 50.0, 16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              EditPhoneTextHeader(),
-              SizedBox(height: 10),
-              PhoneTextFields(),
-              SizedBox(height: 220),
-              Center(child: UpdateButton())
-            ],
-          )),
+      body: const SingleChildScrollView(
+          child: Padding(
+              padding: EdgeInsets.fromLTRB(50.0, 16.0, 50.0, 16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  EditPhoneTextHeader(),
+                  SizedBox(height: 10),
+                  PhoneTextFields(),
+                  SizedBox(height: 220),
+                  Center(child: UpdateButton())
+                ],
+              ))),
     );
   }
 }

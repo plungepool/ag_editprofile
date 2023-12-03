@@ -26,7 +26,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Builder(builder: (context) {
-        return Container(
+        return SingleChildScrollView(
+            child: Container(
           alignment: Alignment.center,
           child: Padding(
               padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
@@ -44,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                   buildAboutButton(context, HomePage.user.about)
                 ],
               )),
-        );
+        ));
       }),
     );
   }

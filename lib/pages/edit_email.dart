@@ -10,27 +10,28 @@ class EditEmail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.white,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.of(context).pop(),
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.white,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back, color: Colors.black),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
         ),
-      ),
-      body: const Padding(
-          padding: EdgeInsets.fromLTRB(50.0, 16.0, 50.0, 16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              EditEmailTextHeader(),
-              SizedBox(height: 10),
-              EmailTextFields(),
-              SizedBox(height: 220),
-              Center(child: UpdateButton())
-            ],
-          )),
-    );
+        body: const SingleChildScrollView(
+          child: Padding(
+              padding: EdgeInsets.fromLTRB(50.0, 16.0, 50.0, 16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  EditEmailTextHeader(),
+                  SizedBox(height: 10),
+                  EmailTextFields(),
+                  SizedBox(height: 220),
+                  Center(child: UpdateButton())
+                ],
+              )),
+        ));
   }
 }
 
