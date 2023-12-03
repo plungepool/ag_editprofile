@@ -4,7 +4,8 @@ This was my first time building a mobile application so I chose Flutter as the f
 ***Note**: Profile photo picker is not supported when run as a web app.*
 
 ## Tested platforms:
-- Android, Windows native
+- Android
+- Windows native
 
 ***Note**: Was unable to test on MacOS or iOS as my Macbook is too outdated to run the current version of Flutter.*
 
