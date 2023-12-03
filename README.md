@@ -4,7 +4,7 @@ This was my first time building a mobile application so I chose Flutter as the f
 ***Note**: Profile photo picker is not supported when run as a web app.*
 
 ## Tested platforms:
-- Android, Windows, Web(Photo picker not supported)
+- Android, Windows native
 
 ***Note**: Was unable to test on MacOS or iOS as my Macbook is too outdated to run the current version of Flutter.*
 
@@ -12,7 +12,7 @@ This was my first time building a mobile application so I chose Flutter as the f
 1) Setup and [install Flutter](https://docs.flutter.dev/get-started/install) along with iOS or Android emulator or physical device to run on.
 2) Clone or download the code to local environment.
 3) Navigate to project root in terminal, run 'flutter pub get', 'flutter clean', and 'flutter run'. Ensure that dependencies are properly loaded without errors.
-4) Choose mobile platform, desktop platform, or web browser.
+4) Choose mobile platform or desktop platform.
 
 ## Demo video:
 https://github.com/plungepool/ag_editprofile/assets/54759532/feb0647a-f151-413c-b862-bbd716419266
