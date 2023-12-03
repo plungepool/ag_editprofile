@@ -1,10 +1,10 @@
 # AG Coding Project
-This was my first time building a mobile application so I chose Flutter as the framework since it is what the team already uses. The project took me about 8 hours not including setup.
+This was my first time building a mobile application so I chose Flutter as the framework since it is what the team already uses. The project took me about 10 hours not including setup.
 
-***Note**: I attempted the bonus challenge of allowing users to edit their profile picture and was partially successful, but was not able to get it to work 100% reliably in the time I had available to dedicate to this project so I moved that feature onto its own branch which can be found [**here**](https://github.com/plungepool/ag_editprofile/tree/feature/profile-image-picker). I ultimately decided to remove it from the main branch so that I could present an application that could be more easily run and I could fully vet rather than submit unfinished work.*
+***Note**: Profile photo picker is not supported when run as a web app.*
 
 ## Tested platforms:
-- Android, Windows, Web
+- Android, Windows, Web(Photo picker not supported)
 
 ***Note**: Was unable to test on MacOS or iOS as my Macbook is too outdated to run the current version of Flutter.*
 
@@ -15,7 +15,7 @@ This was my first time building a mobile application so I chose Flutter as the f
 4) Choose mobile platform, desktop platform, or web browser.
 
 ## Demo video:
-https://github.com/plungepool/ag_editprofile/assets/54759532/46ba214c-85e7-41fa-9710-d9cafdbe6440
+TBD
 
 ## Ways I would improve the project given more time:
 - Input validation and character limits.
