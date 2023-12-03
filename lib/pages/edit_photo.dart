@@ -100,7 +100,7 @@ class _PhotoUploadFieldState extends State<PhotoUploadField> {
                     child: SizedBox(
                         width: 300,
                         height: 300,
-                        child: newImageSelected
+                        child: (newImageSelected || HomePage.user.newPhotoFlag)
                             ? Image.file(imageFile)
                             : Image.asset(HomePage.user.photo)),
                   ),
