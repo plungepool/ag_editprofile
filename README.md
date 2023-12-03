@@ -15,7 +15,7 @@ This was my first time building a mobile application so I chose Flutter as the f
 4) Choose mobile platform, desktop platform, or web browser.
 
 ## Demo video:
-TBD
+https://github.com/plungepool/ag_editprofile/assets/54759532/feb0647a-f151-413c-b862-bbd716419266
 
 ## Ways I would improve the project given more time:
 - Input validation and character limits.
